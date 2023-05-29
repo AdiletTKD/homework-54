@@ -6,6 +6,17 @@
   width: 60px;
   height: 60px;
   background-color: #ccc;
+  margin: 5px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
+.game {
+  border: 1px solid  #000;
+  margin: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 420px;
+}

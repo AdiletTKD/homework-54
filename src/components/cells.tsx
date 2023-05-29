@@ -2,18 +2,19 @@ import React from "react";
 
 interface IProps {
     toggleCell?: React.MouseEventHandler;
-    openCell: boolean;
+    clicked: boolean;
+    hasItem: boolean;
 }
 
-const Cell: React.FC<IProps> = ({toggleCell, openCell}) => {
+const Cell: React.FC<IProps> = ({ clicked }) => {
     const cellClasses = ['ToggleButton'];
 
-    if (openCell) {
+    if (clicked) {
         cellClasses.push('ToggleButton-white')
     }
 
     return (
-        <div className="cell"></div>
+        <div className="cell">{ clicked }</div>
     )
 };
 

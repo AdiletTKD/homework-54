@@ -4,14 +4,20 @@ import './App.css';
 import Cell from './components/cells';
 
 function App() {
+  const renderCells = () => {
+    const cells = [];
+    for (let i = 0; i < 36; i++) {
+      cells.push(<Cell key={i} clicked={false} hasItem={false} />)
+    }
+    console.log(cells);
+    return cells;
+  }
+
   return (
     <div className="App">
-      <Cell openCell={false}  />
-      <div className='game'>
-        
-      </div>
+      <div className='game'> {renderCells()} </div>
     </div>
   );
-}
+};
 
 export default App;
