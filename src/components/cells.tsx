@@ -1,20 +1,21 @@
-import React from "react";
+import { spawn } from "child_process";
+import React, { useState } from "react";
 
 interface IProps {
-    toggleCell?: React.MouseEventHandler;
-    clicked: boolean;
-    hasItem: boolean;
+    item: Item;
+    onClick: () => void
 }
 
-const Cell: React.FC<IProps> = ({ clicked }) => {
-    const cellClasses = ['ToggleButton'];
+interface Item {
+    hasItem: boolean;
+    clicked: boolean;
+}
 
-    if (clicked) {
-        cellClasses.push('ToggleButton-white')
-    }
-
+const Cell: React.FC<IProps> = ({item, onClick}) => {
     return (
-        <div className="cell">{ clicked }</div>
+        <div className={`cell ${item.clicked ? "clicked" : " "}`} onClick={onClick}>
+            {item.clicked && item.hasItem && <span>O</span>}
+        </div>
     )
 };
 
